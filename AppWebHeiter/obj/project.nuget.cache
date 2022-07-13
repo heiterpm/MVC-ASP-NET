@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NWtCApeksl31iZowh4JJ7tbf0Hhxo8E9+ucT11rMiQpqxDFE7xcl9MjKweRLBzZZ3FMez12Z3vouWLz54uJnyQ==",
+  "success": true,
+  "projectFilePath": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\AppWebHeiter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\heite\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.15.1\\microsoft.visualstudio.azure.containers.tools.targets.1.15.1.nupkg.sha512"
+  ],
+  "logs": []
+}
