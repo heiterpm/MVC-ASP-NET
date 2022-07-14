@@ -11,9 +11,13 @@ build_property.RootNamespace = AppWebHeiter
 build_property.ProjectDir = D:\dev\Projetowebcsharp\AppWebHeiter\AppWebHeiter\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\dev\Projetowebcsharp\AppWebHeiter\AppWebHeiter
 build_property._RazorSourceGeneratorDebug = 
+
+[D:/dev/Projetowebcsharp/AppWebHeiter/AppWebHeiter/Views/Aluno/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dev/Projetowebcsharp/AppWebHeiter/AppWebHeiter/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
