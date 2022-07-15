@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AppWebHeiter.Models
 {
@@ -13,6 +14,10 @@ namespace AppWebHeiter.Models
         [Required]
         public float Preco { get; set;}
         [Required]
-        public int QtdEstoque { get; set;}    
+        public int QtdEstoque { get; set; }
+
+        public string NomeArquivo { get; set; }
+        [NotMapped]
+        public IFormFile Img { get; set; }
     }
 }

@@ -1,10 +1,13 @@
 using AppWebHeiter.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer);
+builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ));     //Utiliza do Entity FrameWork  e EntityFrameWork SQL para fazer o acesso ao banco.
 
 var app = builder.Build();
 

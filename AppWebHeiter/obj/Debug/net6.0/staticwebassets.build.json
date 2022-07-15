@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lqe2LuoO6bkSAkhDriSshq7kIaHIvu6tcjpC5OFfhqk=",
+  "Hash": "D0fm5ChDh5/3O0y17KcxLe1KQjxHdery1+5f/V88T50=",
   "Source": "AppWebHeiter",
   "BasePath": "_content/AppWebHeiter",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AppWebHeiter.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\bootswatchTheme.css",
+      "SourceId": "AppWebHeiter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\",
+      "BasePath": "_content/AppWebHeiter",
+      "RelativePath": "css/bootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
     },
     {
       "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\site.css",

@@ -7,8 +7,7 @@ namespace AppWebHeiter.Data
     {
         public AppDBContext (DbContextOptions<AppDBContext> options) : base(options)
         {
-
         }
-        public DbSet<Products> tb_products { get; set; }
+        public DbSet<Products> tb_produtos { get; set; } // O nome tb_products sera o nome da tabela
     }
 }

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Products>;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class = "container p-3">
+    <div class = "row pt-4">
+        <div class="col-6">
+            <h1>Listagem de Produtos</h1>
+        </div>
+        <div class="col-6 text-end">
+            
+            <a asp-controller="Products" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Novo Produto</a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped" style="width: 100%">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Preco
+            </th>
+            <th>
+                Estoque
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var prod in Model)
+        {
+            <tr>
+                <td width="50%">
+                    @prod.Name
+                </td>
+                <td width="50%">
+                    @prod.Preco
+                </td width="50%">
+                <td width="50%">
+                    @prod.QtdEstoque
+                </td>
+                <td width="50%">
+                    <img src="@("~/Images/"+prod.NomeArquivo)" asp-append-version="true" width="250px" height="250px"/>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

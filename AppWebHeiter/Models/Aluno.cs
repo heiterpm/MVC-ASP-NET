@@ -18,11 +18,9 @@ namespace app_mvc.Models
             {
                  _listaAluno = new List<Aluno>()
             {
-                new Aluno(){ Id = 1,Nome= "Paulo",Idade=29, Genero = 'M', Curso="Ciência da Computação"},
-                new Aluno(){ Id = 2,Nome= "Alexandre",Idade=20, Genero = 'M', Curso="Economia"},
-                new Aluno(){ Id = 3,Nome= "Carlos",Idade=25, Genero = 'M', Curso="Ciências Contábeis"},
-                new Aluno(){ Id = 4,Nome= "Bianca",Idade=25, Genero = 'F', Curso="Ciência da Computação"},
-                new Aluno(){ Id = 5,Nome= "Laura",Idade=35, Genero = 'F', Curso="Literatura"}
+                new Aluno(){ Id = 1,Nome= "Heiter1",Idade=29, Genero = 'M', Curso="Ti"},
+                new Aluno(){ Id = 2,Nome= "Heiter2",Idade=20, Genero = 'F', Curso="Economia"},
+                new Aluno(){ Id = 3,Nome= "Heiter3",Idade=25, Genero = 'M', Curso="Filosofia"},
             };
             }
             catch (System.Exception ex)
