@@ -17,7 +17,7 @@ namespace AppWebHeiter.Controllers
 
         public IActionResult Index()
         {
-            var objProdList = _db.tb_produtos.ToList(); 
+            var objProdList = _db.tb_produtos.OrderByDescending(v=>v.Preco).ToList();
             return View(objProdList);
         }
 

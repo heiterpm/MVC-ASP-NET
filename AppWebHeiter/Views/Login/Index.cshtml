@@ -1,0 +1,81 @@
+﻿
+@model Login
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="Views/Login/Index.css"/>
+
+<h1>Tela de Login</h1>
+
+
+
+
+<form>
+    <div class="register-card">
+        <div class="col-md-4">
+            <label>Usuario</label>
+            <input type="text" id="user" />
+        <span class="error">AAAAAAAAAAAAAAAAA</span>
+        </div>
+        <div class="col-md-4">
+            <label>Senha</label>
+            <input type="password" id="password"/>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px" id="botao">Login</button>
+    </div>
+</form>
+
+@section Scripts{
+<script type="text/javascript">
+
+$("#botao").on("click",function(e) {
+    var valid = 0;
+    if ($("#user").val() == "") {
+        $("<span>AAAAAAAAAAAAAAAAA</span>").insertAfter("#user")
+        $("#user").focus();
+        valid = 1;
+        return;
+    }
+    if ($("#password").val() == "") {
+        alert("Preencha Senha");
+        $("#password").focus();
+        valid = 1;
+        return;
+    }
+    if (valid == 0) {
+        $.ajax({
+            type: "POST",
+            url: "/Login/logar",
+            data: {nome: $("#user").val(), senha: $("#password").val()},
+            dataType: "json",
+            sucess: function(response) {
+
+            },
+            error: function(response) {
+                alert(response.toString());
+            },
+        })
+    }
+
+});
+
+
+</script>
+}
+
+
+
+<!--<form method="post">
+    <div class="mb-3">
+        <label asp-for="Usuario">Usuario</label>
+        <input asp-for="Usuario" class="form-control" />
+        <span asp-validation-for="Usuario" class="text-danger"></span>
+    </div>  
+    <div class="mb-3">
+        <label asp-for="Senha">Senha</label>
+        <input asp-for="Senha" class="form-control" type="password"/>
+        <span asp-validation-for="Senha" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:150px">Login</button>
+</form>-->

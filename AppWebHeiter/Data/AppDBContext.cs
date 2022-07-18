@@ -9,5 +9,7 @@ namespace AppWebHeiter.Data
         {
         }
         public DbSet<Products> tb_produtos { get; set; } // O nome tb_products sera o nome da tabela
+
+        public DbSet<Login> tb_usuarios { get; set; }
     }
 }
