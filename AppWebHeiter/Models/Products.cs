@@ -27,11 +27,5 @@ namespace AppWebHeiter.Models
         public string NomeArquivo { get; set; }
         [NotMapped]
         public IFormFile Img { get; set; }
-
-        //public Object BuscaProdutos()
-        //{
-        //    var objProdList = _db.tb_produtos.ToList().OrderBy(v => v.Preco);
-        //    return objProdList;
-        //}
     }
 }

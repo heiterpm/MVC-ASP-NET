@@ -9,6 +9,9 @@ builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));     //Utiliza do Entity FrameWork  e EntityFrameWork SQL para fazer o acesso ao banco.
 
+builder.Services.AddSession();
+builder.Services.AddDistributedMemoryCache();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,6 +24,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 

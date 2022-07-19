@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "somXgkFxtkA08k3lrd5JknloQJUH0r15LT5W40M1ZfQ=",
+  "Hash": "AcfSAAKnzG1/l5zA+dNVvjh3GILoqmOvkcriNqfjoVk=",
   "Source": "AppWebHeiter",
   "BasePath": "_content/AppWebHeiter",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
+    },
+    {
+      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\Login.css",
+      "SourceId": "AppWebHeiter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\",
+      "BasePath": "_content/AppWebHeiter",
+      "RelativePath": "css/Login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
       "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\site.css",
@@ -134,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\500x500.jpeg"
+    },
+    {
+      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\js\\Index.js",
+      "SourceId": "AppWebHeiter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\",
+      "BasePath": "_content/AppWebHeiter",
+      "RelativePath": "js/Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Index.js"
     },
     {
       "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\js\\site.js",

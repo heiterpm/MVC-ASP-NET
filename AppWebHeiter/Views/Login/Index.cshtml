@@ -3,59 +3,58 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<link rel="stylesheet" href="Views/Login/Index.css"/>
+<link rel="stylesheet" href="~/css/Login.css"/>
 
 <h1>Tela de Login</h1>
 
 
 
 
-<form>
-    <div class="register-card">
+<form method="post" enctype="multipart/form-data>
+    <div class="form-group">
         <div class="col-md-4">
             <label>Usuario</label>
-            <input type="text" id="user" />
-        <span class="error">AAAAAAAAAAAAAAAAA</span>
+            <input asp-for="Usuario" type="text" id="user" class="d-block"/>
         </div>
-        <div class="col-md-4">
+        <div class="form-group">
             <label>Senha</label>
-            <input type="password" id="password"/>
+            <input asp-for="Senha" type="password" id="password" class="d-block"/>
+            <p></p>
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px" id="botao">Login</button>
     </div>
 </form>
 
 @section Scripts{
-<script type="text/javascript">
+    <script>
+var viewbag = '@ViewBag.mensagem';
+$( document ).ready(function() {
+    $('<span class="error" id="senharerror">'+ viewbag +'</span>').insertAfter("#password")
+});
 
 $("#botao").on("click",function(e) {
+
+    e.preventDefault();
     var valid = 0;
+
+    $(".error").remove();
     if ($("#user").val() == "") {
-        $("<span>AAAAAAAAAAAAAAAAA</span>").insertAfter("#user")
+        $('<span class="error" id="usererror">Usuario vazio, preencha um usuario</span>').insertAfter("#user")
         $("#user").focus();
         valid = 1;
         return;
     }
+    $("#usererror").remove();
     if ($("#password").val() == "") {
-        alert("Preencha Senha");
+        $('<span class="error" id="senharerror">Senha não pode ser vazia</span>').insertAfter("#password")
         $("#password").focus();
         valid = 1;
         return;
     }
-    if (valid == 0) {
-        $.ajax({
-            type: "POST",
-            url: "/Login/logar",
-            data: {nome: $("#user").val(), senha: $("#password").val()},
-            dataType: "json",
-            sucess: function(response) {
 
-            },
-            error: function(response) {
-                alert(response.toString());
-            },
-        })
+    if (valid == 0) {
+        $(this).unbind('submit').submit()
+        $("form").submit();
     }
 
 });

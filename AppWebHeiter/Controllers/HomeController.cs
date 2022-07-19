@@ -6,6 +6,7 @@ namespace AppWebHeiter.Controllers
 {
     public class HomeController : Controller
     {
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -15,7 +16,10 @@ namespace AppWebHeiter.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var id_usuario = HttpContext.Session.GetInt32("Id");
+            if (id_usuario == null) 
+                return RedirectToAction("Index","Login");
+            else return View();
         }
 
         public IActionResult Privacy()

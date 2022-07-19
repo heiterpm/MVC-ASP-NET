@@ -14,28 +14,33 @@ namespace AppWebHeiter.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.mensagem = "";
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult Index(Login model)
-        //{
-        //    var usuario = _db.tb_usuarios.Where(conta => conta.Usuario == model.Usuario && conta.Senha == model.Senha).FirstOrDefault();
-        //    if(usuario?.Nome != null)
-        //    {
-        //        return RedirectToAction("Index","Home");
-        //    }
-        //    return View();
-        //}
-    [HttpPost]
-    public JsonResult Logar(string nome, string senha) 
+        [HttpPost]
+        public IActionResult Index(Login model)
         {
-            var usuario = _db.tb_usuarios.Where(conta => conta.Usuario == nome && conta.Senha == senha).FirstOrDefault();
-            if (usuario?.Nome != null)
-                {
-                    Console.WriteLine("Entrei?");
-                }
-                    return Json(usuario);
+            var usuario = _db.tb_usuarios.Where(conta => conta.Usuario == model.Usuario).FirstOrDefault();
+            if (usuario?.Nome == null)
+            {
+                ViewBag.mensagem = "Usuario não encontrado";
+                return View();
+            }
+            if (usuario?.Senha != model.Senha)
+            {
+                ViewBag.mensagem = "Senha Incorreta";
+                return View();
+            } else
+                HttpContext.Session.SetInt32("Id",model.Id);
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Remove("Id");
+
+            return RedirectToAction("Index");
         }
     }
 }

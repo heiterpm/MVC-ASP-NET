@@ -11,7 +11,6 @@ namespace AppWebHeiter.Models
         public string Nome { get; set; }
 
         [Required]
-        [Display(Name = "Usuario")]
         public string Usuario { get; set; }
 
         [Required]
