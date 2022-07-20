@@ -31,15 +31,15 @@ namespace AppWebHeiter.Controllers
             {
                 ViewBag.mensagem = "Senha Incorreta";
                 return View();
-            } else
-                HttpContext.Session.SetInt32("Id",model.Id);
+            }
+            else
+                model.SetSession(model.Id, HttpContext);
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
-        public ActionResult Logout()
+        public ActionResult Logout(Login model)
         {
-            HttpContext.Session.Remove("Id");
-
+            model.RemoveSession(HttpContext);
             return RedirectToAction("Index", "Home");
         }
     }

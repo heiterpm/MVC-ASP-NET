@@ -15,5 +15,11 @@ namespace AppWebHeiter.Models
 
         [Required]
         public string Senha { get; set; }
+
+        public void SetSession(int Id, HttpContext httpContext) => httpContext.Session.SetInt32("Id", Id);
+
+        public void RemoveSession(HttpContext httpContext) => httpContext.Session.Remove("Id");
+
+        public int? GetSession(HttpContext httpContext) => httpContext.Session.GetInt32("Id");
     }
 }

@@ -15,20 +15,16 @@ namespace AppWebHeiter.Controllers
             this._host = hostEnvironment;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(Login model, Products prod )
         {
-            var id_usuario = HttpContext.Session.GetInt32("Id");
-            if (id_usuario == null)
+            if (model.GetSession(HttpContext) == null)
                 return RedirectToAction("Index", "Login");
-
-            var objProdList = _db.tb_produtos.OrderByDescending(v=>v.Preco).ToList();
-            return View(objProdList);
+            return View(prod.GetProducts(_db));
         }
 
-        public IActionResult Detalhes(int? id)
+        public IActionResult Detalhes(int? id, Login model, Products prod)
         {
-            var id_usuario = HttpContext.Session.GetInt32("Id");
-            if (id_usuario == null)
+            if (model.GetSession(HttpContext) == null)
                 return RedirectToAction("Index", "Login");
 
             if (id == null || id == 0)
@@ -36,20 +32,17 @@ namespace AppWebHeiter.Controllers
                 return NotFound();
             }
 
-            var produtoFromDb = _db.tb_produtos.FirstOrDefault(v=>v.Id == id);
-
-            if (produtoFromDb == null)
+            if (prod.GetProduct(id, _db) == null)
             {
                 return NotFound();
             }
-            return PartialView(produtoFromDb);
+            return PartialView(prod.GetProduct(id,_db));
         }
 
             //GET
-        public IActionResult Create()
+        public IActionResult Create(Login model)
         {
-            var id_usuario = HttpContext.Session.GetInt32("Id");
-            if (id_usuario == null)
+            if (model.GetSession(HttpContext) == null)
                 return RedirectToAction("Index", "Login");
 
             return View();
@@ -57,22 +50,9 @@ namespace AppWebHeiter.Controllers
 
         //POST
         [HttpPost]
-        public async Task<IActionResult> Create(Products produto)
+        public async Task<IActionResult> Create(Products prod)
         {
-            if(produto.Img !=null)
-            { 
-                string wwwRootPath = _host.WebRootPath;
-                string nomeFileImg = Path.GetFileNameWithoutExtension(produto.Img.FileName);
-                string extensao = Path.GetExtension(produto.Img.FileName);
-                produto.NomeArquivo = nomeFileImg = nomeFileImg + extensao;
-                string path = Path.Combine(wwwRootPath + "/Images/", nomeFileImg);
-                using (var fileStream = new FileStream(path, FileMode.Create)) 
-                {
-                    await produto.Img.CopyToAsync(fileStream);
-                }
-            }
-            _db.tb_produtos.Add(produto);
-                _db.SaveChanges();
+            prod.CreateProduct(_db, _host, prod);
                 return RedirectToAction("Index");
         }
     }

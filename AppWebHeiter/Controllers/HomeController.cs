@@ -14,10 +14,9 @@ namespace AppWebHeiter.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(Login model)
         {
-            var id_usuario = HttpContext.Session.GetInt32("Id");
-            if (id_usuario == null) 
+            if (model.GetSession(HttpContext) == null) 
                 return RedirectToAction("Index","Login");
             else return View();
         }
