@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AcfSAAKnzG1/l5zA+dNVvjh3GILoqmOvkcriNqfjoVk=",
+  "Hash": "r5vpktQWieRNAtcxai9JflbnNDvnTUpfrawTsxq4HDw=",
   "Source": "AppWebHeiter",
   "BasePath": "_content/AppWebHeiter",
   "Mode": "Default",
@@ -68,12 +68,12 @@
       "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
     },
     {
-      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\Login.css",
+      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\Erro.css",
       "SourceId": "AppWebHeiter",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\",
       "BasePath": "_content/AppWebHeiter",
-      "RelativePath": "css/Login.css",
+      "RelativePath": "css/Erro.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,7 +82,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\Login.css"
+      "OriginalItemSpec": "wwwroot\\css\\Erro.css"
     },
     {
       "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\css\\site.css",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\500x500.jpeg"
+    },
+    {
+      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\Images\\SemImagem.jfif",
+      "SourceId": "AppWebHeiter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\",
+      "BasePath": "_content/AppWebHeiter",
+      "RelativePath": "Images/SemImagem.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\SemImagem.jfif"
     },
     {
       "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\js\\Index.js",

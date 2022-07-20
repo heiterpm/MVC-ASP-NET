@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link rel="stylesheet" href="~/css/Erro.css"/>
 
 <form method="post" enctype="multipart/form-data">
     <div class="border p-3 mt-4">
@@ -12,28 +13,63 @@
         </div>
         <div class="mb-3">
             <label asp-for="Name">Nome do Produto</label>
-            <input asp-for="Name" class="form-control" />
+            <input asp-for="Name" class="form-control" id="Name"/>
         </div>
         <div class="mb-3">
             <label asp-for="Descricao">Descrição do produto</label>
-            <input asp-for="Descricao" class="form-control" />
+            <textarea asp-for="Descricao" class="form-control" id="Descricao" rows="3"> </textarea>
         </div>
         <div class="mb-3">
             <label asp-for="Preco">Valor do Produto</label>
-            <input asp-for="Preco" class="form-control" />
+            <input asp-for="Preco" class="form-control" id="Preco"/>
         </div>
         <div class="mb-3">
             <label asp-for="QtdEstoque">Quantidade em estoque</label>
-            <input asp-for="QtdEstoque" class="form-control"/>
+            <input asp-for="QtdEstoque" class="form-control" id="QtdEstoque"/>
         </div>
         <div class="mb-3">
             <label asp-for="Img">Upload da Imagem</label>
             <input asp-for="Img" class="form-control" accept="Images/*"/>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width:150px">Criar</button>
+        <button type="submit" id="botao" class="btn btn-primary" style="width:150px">Criar</button>
         <a asp-controller="Products" asp-action="Index" class="btn btn-secondary" style="width:180px">
             Voltar para Produtos
         </a>
     </div>
 </form>
+
+@section Scripts{
+    <script>
+
+$("#botao").on("click", function(e) {
+
+    e.preventDefault();
+    var valid = 0;
+
+    $(".error").remove();
+    if ($("#Name").val() == "") {
+        $('<span class="error" id="usererror">Nome vazio, digite um nome</span>').insertAfter("#Name")
+        $("#Name").focus();
+        valid = 1;
+        return;
+    }
+    if ($("#Preco").val() == "") {
+        $('<span class="error" id="precoerror">Preço não pode ser vazio</span>').insertAfter("#Preco")
+        $("#Preco").focus();
+        valid = 1;
+        return;
+    }
+    if ($("#Preco").val() == "") {
+        $('<span class="error" id="precoerror">Preço não pode ser vazio</span>').insertAfter("#Preco")
+        $("#Preco").focus();
+        valid = 1;
+        return;
+    }
+    if (valid == 0) {
+        $(this).unbind('submit').submit()
+        $("form").submit();
+    }
+});
+    </script>
+}

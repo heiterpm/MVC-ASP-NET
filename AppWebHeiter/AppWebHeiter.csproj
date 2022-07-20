@@ -32,11 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\css\Login.css" />
+    <None Include="wwwroot\css\Erro.css" />
     <None Include="wwwroot\js\Index.js" />
   </ItemGroup>
 

@@ -4,17 +4,26 @@
 @{
     ViewData["Title"] = "Produto";
 }
-    <div class="border p-3 mt-4">
+    <div class="">
         <div class="row pb-2">
             <h2 class="text-primary">@Model.Name</h2>
             <hr/>
         </div>
+        @if (Model.NomeArquivo != null)
+        {
         <div class="mb-3">
             <img src="/Images/@Model.NomeArquivo" width="250px" height="250px"/>
         </div>
+        }
+        else
+        {
+            <div class="mb-3">
+                <img src="/Images/SemImagem.jfif" width="250px" height="250px"/>
+            </div>
+        }
         <div class="mb-3">
             <label asp-for="Descricao">Descrição do produto</label>
-            <textarea asp-for="Descricao" class="form-control" rows="3" disabled/></textarea>
+            <textarea asp-for="Descricao" class="form-control" rows="3" disabled/>@Model.Descricao</textarea>
         </div>
         <div class="mb-3">
             <label asp-for="Preco">Valor do Produto</label>

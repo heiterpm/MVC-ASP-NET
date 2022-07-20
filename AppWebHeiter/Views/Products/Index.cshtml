@@ -24,9 +24,7 @@
         <div class="mt-2 d-flex flex-row-reverse">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div id="conteudo">
-
-        </div>
+        <div id="conteudo"></div>
         <div class="mt-2 d-flex flex-row-reverse">
             <button type="button" class="btn btn-primary text-right" data-bs-dismiss="modal">Fechar</button>
         </div>
@@ -57,7 +55,7 @@
                     <a href="#" class="btn btn-default details" data-value="@prod.Id" data-bs-toggle="modal" data-bs-target="#prudtoModal">@prod.Name</a>
                 </td>
                 <td width="50%">
-                    @prod.Preco
+                    @Html.DisplayFor(Model => prod.Preco)
                 </td width="50%">
                 <td width="50%">
                     @prod.QtdEstoque
