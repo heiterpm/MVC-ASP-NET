@@ -9,11 +9,30 @@
             <h1>Listagem de Produtos</h1>
         </div>
         <div class="col-6 text-end">
-            
             <a asp-controller="Products" asp-action="Create" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i> &nbsp; Novo Produto</a>
         </div>
     </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="prudtoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="mt-2 d-flex flex-row-reverse">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="conteudo">
+
+        </div>
+        <div class="mt-2 d-flex flex-row-reverse">
+            <button type="button" class="btn btn-primary text-right" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <table class="table table-bordered table-striped" style="width: 100%">
@@ -35,7 +54,7 @@
         {
             <tr>
                 <td width="50%">
-                    @prod.Name
+                    <a href="#" class="btn btn-default details" data-value="@prod.Id" data-bs-toggle="modal" data-bs-target="#prudtoModal">@prod.Name</a>
                 </td>
                 <td width="50%">
                     @prod.Preco
@@ -43,10 +62,21 @@
                 <td width="50%">
                     @prod.QtdEstoque
                 </td>
-                <!--<td width="50%">
-                    <img src="@("~/Images/"+prod.NomeArquivo)" asp-append-version="true" width="250px" height="250px"/>
-                </td>-->
             </tr>
         }
     </tbody>
 </table>
+
+
+@section Scripts{
+    <script>
+    $(document).ready(function (){
+        $(".details").click(function (){
+
+            var id = $(this).data("value");
+
+            $("#conteudo").load("/Products/Detalhes/"+ id);
+        })
+    })
+    </script>
+}

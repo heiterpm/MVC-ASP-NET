@@ -6,12 +6,6 @@ namespace AppWebHeiter.Models
 {
     public class Products
     {
-        private readonly AppDBContext _db;
-
-        public Products(AppDBContext db)
-        {
-            _db = db;
-        }
 
         [Key]
         public int Id { get; set; }
@@ -24,7 +18,7 @@ namespace AppWebHeiter.Models
         [Required]
         public int QtdEstoque { get; set; }
 
-        public string NomeArquivo { get; set; }
+        public string ?NomeArquivo { get; set; }
         [NotMapped]
         public IFormFile Img { get; set; }
     }

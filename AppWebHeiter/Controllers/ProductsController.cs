@@ -21,7 +21,23 @@ namespace AppWebHeiter.Controllers
             return View(objProdList);
         }
 
-        //GET
+        public IActionResult Detalhes(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var produtoFromDb = _db.tb_produtos.FirstOrDefault(v=>v.Id == id);
+
+            if (produtoFromDb == null)
+            {
+                return NotFound();
+            }
+            return PartialView(produtoFromDb);
+        }
+
+            //GET
         public IActionResult Create()
         {
             return View();

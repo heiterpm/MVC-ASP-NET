@@ -40,7 +40,7 @@ namespace AppWebHeiter.Controllers
         {
             HttpContext.Session.Remove("Id");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
