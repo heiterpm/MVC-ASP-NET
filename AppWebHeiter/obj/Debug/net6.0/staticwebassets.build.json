@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MpT3aGCdtjdli3X8x/LRIYo6Xmaw9vGRYEDuioq2q7o=",
+  "Hash": "3yhmWRpF4gFDG4r9Fy/Ye7inLw9Oj3XKI48CtQxwS7M=",
   "Source": "AppWebHeiter",
   "BasePath": "_content/AppWebHeiter",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\caixa-bola-quadrada-turma-do-chaves-seu-barriga.jpg"
+    },
+    {
+      "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\Images\\Engracado.png",
+      "SourceId": "AppWebHeiter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\",
+      "BasePath": "_content/AppWebHeiter",
+      "RelativePath": "Images/Engracado.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Engracado.png"
     },
     {
       "Identity": "D:\\dev\\Projetowebcsharp\\AppWebHeiter\\AppWebHeiter\\wwwroot\\Images\\SemImagem.jfif",

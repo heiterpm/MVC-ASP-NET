@@ -2,6 +2,6 @@
 {
     public class Useful
     {
-        public void Login(int Id, HttpContext httpContext) => httpContext.Session.SetInt32("Id", Id);
+        public void SetLogin(int Id, HttpContext httpContext) => httpContext.Session.SetInt32("Id", Id);
     }
 }

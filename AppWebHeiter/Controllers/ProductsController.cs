@@ -15,34 +15,38 @@ namespace AppWebHeiter.Controllers
             this._host = hostEnvironment;
         }
 
-        public IActionResult Index(Login model, Products prod )
+        public IActionResult Index( )
         {
-            if (model.GetSession(HttpContext) == null)
+            var listProd = _db.tb_produtos.OrderByDescending(v => v.Preco).ToList();
+            if (HttpContext.Session.GetInt32("Id") == null)
                 return RedirectToAction("Index", "Login");
-            return View(prod.GetProducts(_db));
+            return View(listProd);
         }
 
-        public IActionResult Detalhes(int? id, Login model, Products prod)
+        public IActionResult Detalhes(int? id)
         {
-            if (model.GetSession(HttpContext) == null)
+            if (HttpContext.Session.GetInt32("Id") == null)
                 return RedirectToAction("Index", "Login");
+
+            var prod = _db.tb_produtos.FirstOrDefault(v => v.Id == id);
+
 
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            if (prod.GetProduct(id, _db) == null)
+            if (prod == null)
             {
                 return NotFound();
             }
-            return PartialView(prod.GetProduct(id,_db));
+            return PartialView(prod);
         }
 
             //GET
-        public IActionResult Create(Login model)
+        public IActionResult Create()
         {
-            if (model.GetSession(HttpContext) == null)
+            if (HttpContext.Session.GetInt32("Id") == null)
                 return RedirectToAction("Index", "Login");
 
             return View();
@@ -50,10 +54,23 @@ namespace AppWebHeiter.Controllers
 
         //POST
         [HttpPost]
-        public async Task<IActionResult> Create(Products prod)
+        public IActionResult Create(Products prod)
         {
-            prod.CreateProduct(_db, _host, prod);
-                return RedirectToAction("Index");
+            if (prod.Img != null)
+            {
+                string wwwRootPath = _host.WebRootPath;
+                string nomeFileImg = Path.GetFileNameWithoutExtension(prod.Img.FileName);
+                string extensao = Path.GetExtension(prod.Img.FileName);
+                prod.NomeArquivo = nomeFileImg = nomeFileImg + extensao;
+                string path = Path.Combine(wwwRootPath + "/Images/", nomeFileImg);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    prod.Img.CopyToAsync(fileStream);
+                }
+            }
+            _db.tb_produtos.Add(prod);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

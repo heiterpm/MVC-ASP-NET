@@ -14,11 +14,12 @@ namespace AppWebHeiter.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(Login model)
+        public IActionResult Index()
         {
-            if (model.GetSession(HttpContext) == null) 
+            if (HttpContext.Session.GetInt32("Id") == null) 
                 return RedirectToAction("Index","Login");
-            else return View();
+            else 
+                return View();
         }
 
         public IActionResult Privacy()

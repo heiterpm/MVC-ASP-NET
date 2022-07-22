@@ -22,9 +22,11 @@
                   <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Produtos</a>
                 </li>
               </ul>
+              @if (ViewBag.logado != false){
                 <div class="nav-item">
                   <a class="btn btn-danger" asp-area="" asp-controller="Login" asp-action="Logout" class="text=end">Sair</a>
                 </div>
+                }
             </div>
           </div>
         </nav>

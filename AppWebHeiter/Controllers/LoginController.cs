@@ -14,6 +14,7 @@ namespace AppWebHeiter.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.logado = false;
             ViewBag.mensagem = "";
             return View();
         }
@@ -21,6 +22,7 @@ namespace AppWebHeiter.Controllers
         [HttpPost]
         public IActionResult Index(Login model)
         {
+
             var usuario = _db.tb_usuarios.Where(conta => conta.Usuario == model.Usuario).FirstOrDefault();
             if (usuario?.Nome == null)
             {
@@ -33,13 +35,15 @@ namespace AppWebHeiter.Controllers
                 return View();
             }
             else
-                model.SetSession(model.Id, HttpContext);
+                ViewBag.logado = true;
+                HttpContext.Session.SetInt32("Id", model.Id);
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
-        public ActionResult Logout(Login model)
+        public ActionResult Logout()
         {
-            model.RemoveSession(HttpContext);
+            ViewBag.logado = false;
+            HttpContext.Session.Remove("Id");
             return RedirectToAction("Index", "Home");
         }
     }
