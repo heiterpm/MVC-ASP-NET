@@ -1,4 +1,5 @@
 using AppWebHeiter.Data;
+using AppWebHeiter.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,8 @@ builder.Services.AddSession();
 builder.Services.AddDistributedMemoryCache();
 
 var app = builder.Build();
+
+DatabaseManagementService.MigrationInitialisation(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
